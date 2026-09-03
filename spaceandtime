@@ -1,0 +1,34 @@
+def linear_search(arr, x):
+    """
+    Search for element x in array arr.
+    Returns the 0-based index of x if found, otherwise returns -1.
+    """
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i  # Element found, return its 0-based index
+    return -1  # Element not found
+# Example Usage (Dynamic Input):
+if __name__ == "__main__":
+    try:
+        # Input: Number of elements
+        n = int(input("Enter the number of elements (n): "))
+        
+        # Input: Array elements
+        print(f"Enter {n} space-separated integers:")
+        arr = list(map(int, input().split()))
+        
+        # Ensure we only check up to n elements
+        if len(arr) != n:
+            print(f"Adjusting array size to match {n} elements.")
+            arr = arr[:n]
+            
+        # Input: Target element to search
+        x = int(input("Enter the element to search (x): "))
+        
+        # Perform linear search
+        result = linear_search(arr, x)
+        
+        # Output the result
+        print(f"Index: {result}")
+    except ValueError:
+        print("Invalid input! Please enter integers only.")
